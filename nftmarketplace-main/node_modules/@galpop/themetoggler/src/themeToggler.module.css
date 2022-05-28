@@ -1,0 +1,80 @@
+:root {
+  --light-focus-color: #003bfc;
+  --dark-focus-color: #fff;
+}
+
+.toggler {
+  position: relative;
+  display: inline-block;
+  width: 3.75em;
+  height: 2.125em;
+}
+
+.toggler input {
+  opacity: 0;
+  width: 3.75em;
+  height: 2.125em;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.185em 0.46em;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.625em;
+  width: 1.625em;
+  left: 0.25em;
+  bottom: 0.25em;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #525454;
+}
+
+input:focus:checked + .slider {
+  box-shadow: 0 0.5em 3em var(--dark-focus-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0.5em 3em var(--light-focus-color);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(1.625em);
+  -ms-transform: translateX(1.625em);
+  transform: translateX(1.625em);
+}
+
+.slider.round {
+  border-radius: 2.125em;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
